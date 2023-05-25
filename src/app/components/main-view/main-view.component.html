@@ -1,1 +1,50 @@
-<h1>WORKSSSS MAIN VIEW</h1>
+<div class="main-container">
+    <mat-card class="container">
+        <mat-card-title>Add car</mat-card-title>
+        <mat-card-content>
+    
+            <div [formGroup]="CarForm">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="Name" type="text" required>
+                    <mat-error *ngIf="CarForm.controls['Name'].status === 'INVALID'">
+                        The name is required
+                    </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>Model</mat-label>
+                    <input matInput formControlName="Model" type="text" required>
+                    <mat-error *ngIf="CarForm.controls['Model'].status === 'INVALID'">
+                        The Model is required
+                    </mat-error>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label>Year</mat-label>
+                    <input matInput formControlName="Year" type="text" required>
+                    <mat-error *ngIf="CarForm.controls['Year'].status === 'INVALID'">
+                        The Year is required
+                    </mat-error>
+                </mat-form-field>
+    
+                <br>
+                <button mat-raised-button (click)="addCar()">SUBMIT</button>
+            </div>
+    
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card class="container">
+        <mat-form-field>
+          <mat-label>Select car</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let car of cars">
+              {{car.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+    </mat-card>
+
+</div>

@@ -11,7 +11,7 @@ export class CarService {
     constructor(private http: HttpClient) { }
 
     getCars() {
-        return this.http.get(`${environment.baseUrl}${Endpoints.car.getCar.path()}`);
+        return this.http.get<Car[]>(`${environment.baseUrl}${Endpoints.car.getCar.path()}`);
     }
 
     createCar(car: Car) {

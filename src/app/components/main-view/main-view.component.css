@@ -1,0 +1,27 @@
+.container {
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5rem;
+    margin-top: 5%;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #d6d4d4;
+  }
+  
+  .container button {
+    background-color: #008cba;
+    color: #ffffff;
+  }
+  
+  .container mat-form-field {
+    margin: 10px;
+  }
+
+  .main-container {
+    background-color: #b4d1db;
+    display: flex;
+    height: 100%;
+  }
