@@ -22,7 +22,7 @@
     
                 <mat-form-field>
                     <mat-label>Year</mat-label>
-                    <input matInput formControlName="Year" type="text" required>
+                    <input matInput formControlName="Year" type="number" required>
                     <mat-error *ngIf="CarForm.controls['Year'].status === 'INVALID'">
                         The Year is required
                     </mat-error>
@@ -38,9 +38,9 @@
     <mat-card class="container">
         <mat-form-field>
           <mat-label>Select car</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let car of cars">
-              {{car.name}}
+          <mat-select (selectionChange)="onDropdownChange($event)">
+            <mat-option *ngFor="let car of cars" [value]="car.valueUI" >
+              {{car.valueUI}} 
             </mat-option>
           </mat-select>
         </mat-form-field>
